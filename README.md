@@ -1,46 +1,17 @@
 
-
-| GitHub | PyPI | Documentation |
-| ------ | ---- | ------------- |
-| [![GitHub](https://img.shields.io/badge/GitHub-vanna-blue?logo=github)](https://github.com/vanna-ai/vanna) | [![PyPI](https://img.shields.io/pypi/v/vanna?logo=pypi)](https://pypi.org/project/vanna/) | [![Documentation](https://img.shields.io/badge/Documentation-vanna-blue?logo=read-the-docs)](https://vanna.ai/docs/) |
-
-# Vanna
-Vanna is an MIT-licensed open-source Python RAG (Retrieval-Augmented Generation) framework for SQL generation and related functionality.
-
-https://github.com/vanna-ai/vanna/assets/7146154/1901f47a-515d-4982-af50-f12761a3b2ce
-
-![vanna-quadrants](https://github.com/vanna-ai/vanna/assets/7146154/1c7c88ba-c144-4ecf-a028-cf5ba7344ca2)
-
 ## How Vanna works
-
-![Screen Recording 2024-01-24 at 11 21 37 AM](https://github.com/vanna-ai/vanna/assets/7146154/1d2718ad-12a8-4a76-afa2-c61754462f93)
-
 
 Vanna works in two easy steps - train a RAG "model" on your data, and then ask questions which will return SQL queries that can be set up to automatically run on your database.
 
 1. **Train a RAG "model" on your data**.
 2. **Ask questions**.
 
-![](img/vanna-readme-diagram.png)
 
 If you don't know what RAG is, don't worry -- you don't need to know how this works under the hood to use it. You just need to know that you "train" a model, which stores some metadata and then use it to "ask" questions.
 
-See the [base class](https://github.com/vanna-ai/vanna/blob/main/src/vanna/base/base.py) for more details on how this works under the hood.
 
 ## User Interfaces
 These are some of the user interfaces that we've built using Vanna. You can use these as-is or as a starting point for your own custom interface.
-
-- [Jupyter Notebook](https://vanna.ai/docs/postgres-openai-vanna-vannadb/)
-- [vanna-ai/vanna-streamlit](https://github.com/vanna-ai/vanna-streamlit)
-- [vanna-ai/vanna-flask](https://github.com/vanna-ai/vanna-flask)
-- [vanna-ai/vanna-slack](https://github.com/vanna-ai/vanna-slack)
-
-
-## Getting started
-See the [documentation](https://vanna.ai/docs/) for specifics on your desired database, LLM, etc.
-
-If you want to get a feel for how it works after training, you can try this [Colab notebook](https://vanna.ai/docs/app/).
-
 
 ### Install
 ```bash
@@ -49,8 +20,7 @@ pip install vanna
 
 There are a number of optional packages that can be installed so see the [documentation](https://vanna.ai/docs/) for more details.
 
-### Import
-See the [documentation](https://vanna.ai/docs/) if you're customizing the LLM or vector database.
+### Import    
 
 ```python
 # The import statement will vary depending on your LLM and vector database. This is an example for OpenAI + ChromaDB
@@ -116,7 +86,7 @@ FROM   snowflake_sample_data.tpch_sf1.lineitem l join snowflake_sample_data.tpch
         ON l.l_orderkey = o.o_orderkey join snowflake_sample_data.tpch_sf1.customer c
         ON o.o_custkey = c.c_custkey
 GROUP BY customer_name
-ORDER BY total_sales desc limit 10;
+ORDER BY total_sales desc li 10;
 ```
 
 If you've connected to a database, you'll get the table:
@@ -185,7 +155,6 @@ If you've connected to a database, you'll get the table:
 </div>
 
 You'll also get an automated Plotly chart:
-![](img/top-10-customers.png)
 
 ## RAG vs. Fine-Tuning
 RAG
@@ -217,14 +186,4 @@ Fine-Tuning
     - Most people start in a Jupyter Notebook.
     - Expose to your end users via Slackbot, web app, Streamlit app, or a custom front end.
 
-## Extending Vanna
-Vanna is designed to connect to any database, LLM, and vector database. There's a [VannaBase](https://github.com/vanna-ai/vanna/blob/main/src/vanna/base/base.py) abstract base class that defines some basic functionality. The package provides implementations for use with OpenAI and ChromaDB. You can easily extend Vanna to use your own LLM or vector database. See the [documentation](https://vanna.ai/docs/) for more details.
 
-## Vanna in 100 Seconds
-
-https://github.com/vanna-ai/vanna/assets/7146154/eb90ee1e-aa05-4740-891a-4fc10e611cab
-
-## More resources
- - [Full Documentation](https://vanna.ai/docs/)
- - [Website](https://vanna.ai)
- - [Discord group for support](https://discord.gg/qUZYKHremx)
