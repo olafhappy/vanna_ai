@@ -18,8 +18,6 @@ These are some of the user interfaces that we've built using Vanna. You can use 
 pip install vanna
 ```
 
-There are a number of optional packages that can be installed so see the [documentation](https://vanna.ai/docs/) for more details.
-
 ### Import    
 
 ```python
@@ -41,7 +39,6 @@ vn = MyVanna(config={'api_key': 'sk-...', 'model': 'gpt-4-...'})
 
 
 ## Training
-You may or may not need to run these `vn.train` commands depending on your use case. See the [documentation](https://vanna.ai/docs/) for more details.
 
 These statements are shown to give you a feel for how it works.
 
